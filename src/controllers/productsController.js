@@ -41,8 +41,9 @@ const controller = {
 		let product ={
 			id: lastId()+1,
 			...req.body,
+			image: req.file.filename
 		}
-		
+		console.log(req.file);
 		products.push(product);
 
 		let productsJson = JSON.stringify(products, null, 4);
