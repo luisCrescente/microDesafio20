@@ -20,6 +20,7 @@ const controller = {
 	index: (req, res) => {
 		res.render('index',{products});
 	},
+	
 	search: (req, res) => {
 		let buscado = req.query.search;
 		let productsNew = [];
@@ -28,7 +29,7 @@ const controller = {
 				productsNew.push(products[i]);
 			}
 		}
-		console.log(productsNew);
+		
 		res.render('results',{'products':productsNew});
 	},
 	// Detail - Detail from one product

@@ -21,16 +21,17 @@ const productsController = require('../controllers/productsController');
 
 /*** GET ALL PRODUCTS ***/ 
 router.get('/', productsController.index); 
-router.get('/create', productsController.create); 
-router.get('/:id/edit/', productsController.edit); 
-
-/*** CREATE ONE PRODUCT ***/ 
-router.post('/', upload.single('group-image') ,productsController.store); 
 
 // /*** GET ONE PRODUCT ***/ 
  router.get('/detail/:id/', productsController.detail); 
 
+/*** CREATE ONE PRODUCT ***/ 
+router.get('/create', productsController.create); 
+router.post('/', upload.single('group-image') ,productsController.store); 
+
+
 // /*** EDIT ONE PRODUCT ***/ 
+router.get('/:id/edit/', productsController.edit); 
 router.put('/edit/:id', productsController.update); 
 
 // /*** DELETE ONE PRODUCT***/ 
